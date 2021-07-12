@@ -15,6 +15,15 @@ declare module 'styled-components' {
       gray: string
       white: string
       black: string
+      neutral_100: string
+      neutral_200: string
+      neutral_300: string
+      neutral_400: string
+      neutral_500: string
+      neutral_600: string
+      neutral_700: string
+      neutral_800: string
+      neutral_900: string
     }
     font: {
       family: string

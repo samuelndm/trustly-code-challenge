@@ -22,6 +22,15 @@ export const mainTheme: DefaultTheme = {
     gray: '#8E8E8E',
     white: '#FFFFFF',
     black: '#222222',
+    neutral_100: '#FFFFFF',
+    neutral_200: '#F4F4F4',
+    neutral_300: '#C6C6CA',
+    neutral_400: '#696B7C',
+    neutral_500: '#34353E',
+    neutral_600: '#1B1D26',
+    neutral_700: '#0A0A0D',
+    neutral_800: '#000000',
+    neutral_900: '#222222',
   },
   font: {
     family:
