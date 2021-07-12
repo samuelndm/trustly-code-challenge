@@ -1,11 +1,10 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { mainTheme } from 'assets/styles/themes'
-import GlobalStyles from 'assets/styles/globalStyles'
+import { themes, GlobalStyles } from 'assets/styles'
 
 const App = () => {
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={themes.mainTheme}>
       <GlobalStyles />
     </ThemeProvider>
   )
