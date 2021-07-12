@@ -25,6 +25,6 @@
     "src"
   ],
   "files": [
-    "assets/styles/themes/styled.d.ts"
+    "src/assets/styles/themes/styled.d.ts"
   ]
 }
