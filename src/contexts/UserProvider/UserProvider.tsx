@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react'
 import { createContext } from 'use-context-selector'
+import avatarMock from 'assets/images/avatar.png'
 
 type User = {
   name: string
-  avatar: string
+  avatar?: string
 }
 
 type userContextType = {
@@ -20,7 +21,7 @@ export const UserContext = createContext({} as userContextType)
 const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<User>({
     name: '',
-    avatar: '',
+    avatar: avatarMock,
   })
 
   const updateUser = useCallback((newUser: User) => {
