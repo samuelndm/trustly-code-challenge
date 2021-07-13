@@ -43,7 +43,7 @@
     "prettier": "2.3.2"
   },
   "lint-staged": {
-    "src/**/*": [
+    "src/**/*.{ts,tsx}": [
       "eslint src --max-warnings=0 --fix"
     ]
   },
