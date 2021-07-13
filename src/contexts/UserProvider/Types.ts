@@ -3,7 +3,7 @@ export type User = {
   avatar?: string
 }
 
-export type userContextType = {
+export type UserContextType = {
   user: User
   updateUser: (user: User) => void
 }
