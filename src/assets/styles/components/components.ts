@@ -1,5 +1,20 @@
 import styled from 'styled-components'
 
+type FlexContainerProps = {
+  width?: string
+  alignItems?: string
+  justifyContent?: string
+}
+
+type FlexItemProps = {
+  lg?: number
+  md?: number
+  sm?: number
+  xs?: number
+  margin?: number
+  padding?: number
+}
+
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 15px;
@@ -24,12 +39,6 @@ export const ContainerTitle = styled.h2`
   }
 `
 
-type FlexContainerProps = {
-  width?: string
-  alignItems?: string
-  justifyContent?: string
-}
-
 export const FlexContainer = styled.div<FlexContainerProps>`
   width: ${({ width }) => width || '100%'};
   display: flex;
@@ -41,15 +50,6 @@ export const FlexContainer = styled.div<FlexContainerProps>`
     flex: auto;
   }
 `
-
-type FlexItemProps = {
-  lg?: number
-  md?: number
-  sm?: number
-  xs?: number
-  margin?: number
-  padding?: number
-}
 
 export const FlexItem = styled.div<FlexItemProps>`
   display: flex;

@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 
-export const PageContainer = styled.div`
+export const Container = styled.div`
   ${({ theme }) => css`
+    padding: ${theme.navbar.height} 0 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -12,4 +13,4 @@ export const PageContainer = styled.div`
   `}
 `
 
-export const PageTitle = styled.h1``
+export const Title = styled.h1``
