@@ -1,3 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div``
+type ContainerProps = {
+  avatar: string
+}
+
+export const Container = styled.div<ContainerProps>`
+  ${({ avatar }) => css`
+    width: 3.481rem;
+    height: 3.521rem;
+    border-radius: 50%;
+    background: url(${avatar});
+    cursor: pointer;
+  `}
+`
