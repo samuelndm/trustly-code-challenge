@@ -41,7 +41,8 @@ export const mainTheme: DefaultTheme = {
       medium: '1.6rem',
       large: '1.8rem',
       xlarge: '2.0rem',
-      xxlarge: '2.8rem',
+      xxlarge: '2.6rem',
+      xxxlarge: '2.8rem',
     },
     weight: {
       light: 300,
@@ -62,7 +63,11 @@ export const mainTheme: DefaultTheme = {
     xlarge: '4.8rem',
     xxlarge: '5.6rem',
   },
+  navbar: {
+    height: '8.7rem',
+    backgroudColor: '#F1F1F1',
+  },
   page: {
-    backgroundColor: '#F6F7FB',
+    backgroundColor: '#FFFFFF',
   },
 }

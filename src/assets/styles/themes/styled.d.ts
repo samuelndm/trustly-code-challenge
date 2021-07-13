@@ -34,6 +34,7 @@ declare module 'styled-components' {
         large: string
         xlarge: string
         xxlarge: string
+        xxxlarge: string
       }
       weight: {
         light: number
@@ -53,6 +54,10 @@ declare module 'styled-components' {
       large: string
       xlarge: string
       xxlarge: string
+    }
+    navbar: {
+      height: string
+      backgroudColor: string
     }
     page: {
       backgroundColor: string
