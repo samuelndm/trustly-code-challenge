@@ -1,7 +1,20 @@
 import React, { useCallback, useState } from 'react'
 import { createContext } from 'use-context-selector'
-import { User, UserContextType, UserProviderProps } from './Types'
 import avatarMock from 'assets/images/avatar.png'
+
+export type User = {
+  name: string
+  avatar?: string
+}
+
+export type UserContextType = {
+  user: User
+  updateUser: (user: User) => void
+}
+
+export type UserProviderProps = {
+  children: React.ReactNode
+}
 
 export const UserContext = createContext({} as UserContextType)
 
