@@ -1,45 +1,56 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { FaSearch } from 'react-icons/fa'
+
+type ButtonProps = {
+  isActive?: boolean
+}
 
 export const Form = styled.form`
-  flex-grow: 1;
-  margin: '0 10px 0 0';
+  width: 100%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media screen and (max-width: 991px) {
-    max-width: 100%;
-  }
 `
 
 export const Label = styled.label``
 
 export const Input = styled.input`
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
-  border-radius: 18px;
-  box-shadow: inset 1px 1px 3px 0 rgba(79, 82, 88, 0.34);
+  font-size: 2.4rem;
+  border-bottom: 0.1rem solid #bdbdbd;
 
-  @media screen and (max-width: 991px) {
-    padding: 10px;
+  &::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3.3rem;
+    letter-spacing: 0;
+    text-align: center;
+    color: #a8a8a8;
   }
 
   &::-webkit-search-cancel-button {
     position: relative;
-    right: 60px;
+    right: 6rem;
+    font-size: 3rem;
   }
 `
 
-export const Button = styled.button`
-  padding: 10px;
-  position: absolute;
-  right: 25px;
-  background-color: transparent;
-  cursor: pointer;
+export const Button = styled.button<ButtonProps>`
+  ${({ isActive }) => css`
+    padding: 1rem;
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    ${isActive ? 'right: 2.5rem' : 'left: 2.5rem'};
+  `}
 `
 
-export const Icon = styled.i`
-  color: #333;
-  font-size: 18px;
+export const Icon = styled(FaSearch)`
+  color: #787878;
+  font-size: 2.2rem;
 `

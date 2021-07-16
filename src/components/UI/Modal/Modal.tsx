@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import * as UTIL from 'utils'
 import * as S from './styles'
 
 type ModalProps = {
-  isModalOpen: boolean
-  closeModal: (isOpen: null) => void
+  isModalOpen: boolean | null
+  closeModal: (isOpen: boolean | null) => void
   children: React.ReactNode
-  size?: string
+  size?: UTIL.Enums.ModalSizes
 }
 
 const Modal = ({ isModalOpen, closeModal, children, size }: ModalProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState<boolean | null>(false)
 
   useEffect(() => {
     setIsOpen(isModalOpen)

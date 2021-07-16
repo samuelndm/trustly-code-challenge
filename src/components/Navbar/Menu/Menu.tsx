@@ -1,12 +1,11 @@
 import React from 'react'
-import { useUserContext } from 'hooks'
-import noAvatarImg from 'assets/images/no-avatar.png'
+import * as Hooks from 'hooks'
 import * as S from './styles'
+import noAvatarImg from 'assets/images/no-avatar.png'
 
 const Menu = () => {
-  const { user } = useUserContext()
+  const { user } = Hooks.useUserContext()
 
-  console.log('user', user)
   return <S.Container avatar={user?.avatar || noAvatarImg}></S.Container>
 }
 

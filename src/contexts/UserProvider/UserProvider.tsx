@@ -7,12 +7,12 @@ export type User = {
   avatar?: string
 }
 
-export type UserContextType = {
+type UserContextType = {
   user: User
   updateUser: (user: User) => void
 }
 
-export type UserProviderProps = {
+type UserProviderProps = {
   children: React.ReactNode
 }
 

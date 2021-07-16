@@ -12,7 +12,7 @@ type ContainerProps = {
 
 export const Container = styled.div<ContainerProps>`
   ${({ theme, color }) => css`
-    margin: 20px 0;
+    margin: 2rem 0;
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -26,20 +26,20 @@ export const Container = styled.div<ContainerProps>`
 
 export const Icon = styled.i`
   ${({ theme }) => css`
-    margin: 0 5px;
-    padding: 10px 14px;
+    margin: 0 0.5rem;
+    padding: 1rem 1.4rem;
     cursor: pointer;
     background-color: transparent;
 
     &:hover {
-      border-radius: 3px;
+      border-radius: 0.3rem;
       background-color: ${theme?.colors?.primary?.dark || '#31217C'};
       color: #fff;
       transition: background-color 2s ease-int-out;
     }
 
     @media screen and (max-width: 350px) {
-      padding: 10px;
+      padding: 1rem;
     }
   `}
 `

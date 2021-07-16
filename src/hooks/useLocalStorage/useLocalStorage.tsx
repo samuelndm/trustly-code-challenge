@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
 // eslint-disable-next-line
-const useLocalStorage = (key: string, newValue?: any) => {
+const useLocalStorage = (key: string, defaultValue: any = null) => {
   const storageValue = localStorage.getItem(key)
   const initialValue = storageValue ? JSON.parse(storageValue) : null
   const [value, setValue] = useState(initialValue)
@@ -20,11 +20,11 @@ const useLocalStorage = (key: string, newValue?: any) => {
   }, [key])
 
   useEffect(() => {
-    if (newValue) {
-      localStorage.setItem(key, JSON.stringify(newValue))
-      setValue(newValue)
+    if (defaultValue) {
+      localStorage.setItem(key, JSON.stringify(defaultValue))
+      setValue(defaultValue)
     }
-  }, [key, newValue])
+  }, [key, defaultValue])
 
   return [value, (value: any) => updatingValue(value), () => removingValue()] // eslint-disable-line
 }

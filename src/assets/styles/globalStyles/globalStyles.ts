@@ -47,6 +47,7 @@ export default createGlobalStyle`
   }
   input ,
   textarea,
+  button,
   select {
     appearance: none;
     border: 0;

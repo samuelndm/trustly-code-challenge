@@ -1,8 +1,9 @@
 import styled, { keyframes } from 'styled-components'
+import * as UTIL from 'utils'
 
 type ContentProps = {
-  isOpen: boolean
-  size?: string
+  isOpen: boolean | null
+  size?: UTIL.Enums.ModalSizes
 }
 
 export const Container = styled.div`
@@ -11,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   left: 0;
-  padding: 0 15px;
+  padding: 0 1.5rem;
   position: fixed;
   right: 0;
   top: 0;
@@ -47,9 +48,9 @@ export const ContentClosingAnimation = keyframes`
 export const Content = styled.div<ContentProps>`
   z-index: 99999;
   margin: auto;
-  padding: 15px;
+  padding: 1.5rem;
   position: relative;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   background-color: transparent;
   animation: ${({ isOpen }) =>
     isOpen ? ContentOpenAnimation : ContentClosingAnimation}
@@ -57,45 +58,45 @@ export const Content = styled.div<ContentProps>`
   width: ${({ size }) => {
     switch (size) {
       case 'lg':
-        return '800px'
+        return '80rem'
       case 'md':
-        return '600px'
+        return '60rem'
       case 'sm':
-        return '400px'
+        return '40rem'
       default:
         return 'auto'
     }
   }};
   @media (min-width: 480px) {
-    max-width: 728px;
+    max-width: 72.8rem;
   }
   @media (min-width: 992px) {
-    max-width: 960px;
+    max-width: 96.0rem;
   }
   @media (min-width: 1200px) {
-    max-width: 1140px;
+    max-width: 114.0rem;
   }
 }
   `
 
 export const CloseButton = styled.button`
   background: #f7f9fc;
-  border: 2px solid #8f9bb3;
-  border-radius: 1000px;
+  border: 0.2rem solid #8f9bb3;
+  border-radius: 100rem;
   cursor: pointer;
-  height: 38px;
-  margin: 0 5px 0 30px;
+  height: 3.8rem;
+  margin: 0 0.5rem 0 3rem;
   position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 38px;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 3.8rem;
   z-index: 999999;
 `
 
 export const CloseIcon = styled.i`
   color: #2e3a59;
-  font-size: 24px;
-  font-weight: 300p;
+  font-size: 2.4rem;
+  font-weight: 300;
 `
 
 export const Background = styled.div`

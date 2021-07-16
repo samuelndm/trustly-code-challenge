@@ -90,7 +90,7 @@ export const removeArrayDuplicatesByKey = (
   return newArray
 }
 
-export const normalizeString = (string: string) => {
+export const removeStringAccents = (string: string) => {
   let newString = ''
   if (string) {
     newString = string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -100,7 +100,7 @@ export const normalizeString = (string: string) => {
 
 export const formatCurrency = (
   value: number,
-  locationCode: UTIL.Enums.LocationCodes,
+  locationCode: UTIL.Enums.LanguageCodes,
   currencyCode: UTIL.Enums.CurrencyCodes
 ) => {
   return new Intl.NumberFormat(locationCode || 'pt-BR', {
@@ -168,4 +168,37 @@ export const removeElementsAttrByQuery = (query: any, attr: string) => {
 
 export const splitParagraphs = (text: string) => {
   return text?.match(/[^\r\n]+/g) || []
+}
+
+export const getBrowserLanguage = (): UTIL.Enums.LanguageCodes => {
+  const language = window.navigator.language
+  const typedLanguage = language as keyof typeof UTIL.Enums.LanguageCodes
+
+  return UTIL.Enums.LanguageCodes[typedLanguage]
+}
+
+export const updateStateWithoutReRender = (
+  state: any,
+  property: any,
+  newPropertyValue: any
+) => {
+  Object.assign(state, {
+    [property]: newPropertyValue,
+  })
+}
+
+export const FilterArrayByProperty = (
+  array: any[],
+  property: any,
+  searched: any
+) => {
+  if (array?.length && property && searched) {
+    return array.filter((item: any) =>
+      removeStringAccents(item[property]?.toLowerCase()?.trim()).includes(
+        removeStringAccents(searched?.toLowerCase()?.trim())
+      )
+    )
+  }
+
+  return array || []
 }

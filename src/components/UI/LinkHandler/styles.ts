@@ -34,7 +34,7 @@ export const Container = styled.div<ContainerProps>`
     }};
 
     color: ${({ color }) => color || '#000'};
-    font-size: ${({ fontSize }) => fontSize || '14px'};
+    font-size: ${({ fontSize }) => fontSize || '1.4rem'};
     font-weight: ${({ fontWeight }) => fontWeight || '500'};
     cursor: pointer;
 
