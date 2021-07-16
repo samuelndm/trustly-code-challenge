@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
   height: 37.3rem;
   width: 29.822rem;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +35,15 @@ export const Description = styled.span`
 export const Values = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+
+  @media screen and (max-width: 586px) {
+    & > * {
+      margin: 0.5rem 0;
+    }
+  }
 `
 
 export const Price = styled.span`
@@ -52,6 +60,7 @@ export const Button = styled.button`
   ${({ theme }) => css`
     height: 4.17rem;
     width: 27.56rem;
+    max-width: 100%;
     border-radius: 0.45rem;
     background-color: ${theme.colors.primary.base};
     color: ${theme.colors.white};

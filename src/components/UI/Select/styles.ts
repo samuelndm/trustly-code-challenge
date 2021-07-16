@@ -54,7 +54,7 @@ export const Label = styled.span`
 
   @media screen and (max-width: 584px) {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1rem !important;
     line-height: 1.6rem;
   }
 `

@@ -1,3 +1,13 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
+
 export const containerStyle = {
   width: 'auto',
   display: 'flex',

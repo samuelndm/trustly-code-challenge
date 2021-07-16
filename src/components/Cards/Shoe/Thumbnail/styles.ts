@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const Thumbnail = styled.img`
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   border-radius: 0.45rem;
   cursor: pointer;
 

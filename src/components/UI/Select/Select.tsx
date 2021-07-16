@@ -52,8 +52,8 @@ const Select = ({
   }, [options])
 
   return (
-    <S.Container style={{ ...containerStyle }}>
-      <S.Label style={{ ...labelStyle }}>{label || ''}</S.Label>
+    <S.Container style={containerStyle}>
+      <S.Label style={labelStyle}>{label || ''}</S.Label>
 
       <CustomSelect
         options={customOptions}

@@ -14,8 +14,8 @@ const Sizes = ({ sizes, updateSize }: SizesProps) => {
       options={sizes}
       onChange={updateSize}
       defaultValue={sizes[0]}
-      containerStyle={{ ...S.containerStyle }}
-      labelStyle={{ ...S.labelStyle }}
+      containerStyle={S.containerStyle}
+      labelStyle={S.labelStyle}
     />
   )
 }
