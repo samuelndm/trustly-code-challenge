@@ -60,8 +60,14 @@ const usePayWithMyBank = () => {
         if (command === 'event' && event.type === 'new_location') {
           if (event.data.indexOf(returnUrl) === 0) {
             setPaymentStatus(UTIL.Constants.PAYMENT_STATUS.SUCCEED)
+            UTIL.Notifications.createSuccessNotification({
+              message: 'Purchase made successfully!',
+            })
           } else {
             setPaymentStatus(UTIL.Constants.PAYMENT_STATUS.FAILED)
+            UTIL.Notifications.createDangerNotification({
+              message: 'There was an error during payment!',
+            })
           }
         }
       }
@@ -86,10 +92,10 @@ const usePayWithMyBank = () => {
     }
   }, [purchase])
 
-  return [
+  return {
     paymentStatus,
-    (purchase: PurchaseType) => proceedPayment(purchase),
-  ] as const
+    proceedPayment,
+  }
 }
 
 export default usePayWithMyBank
