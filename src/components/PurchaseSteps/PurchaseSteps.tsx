@@ -20,7 +20,7 @@ const PurchaseSteps = ({ step }: PurchaseStepsProps) => {
       </S.Step>
       <S.Step>
         <S.Circle isActive={step >= 3} />
-        <S.Label>Receipet</S.Label>
+        <S.Label>Receipt</S.Label>
       </S.Step>
     </S.Container>
   )
