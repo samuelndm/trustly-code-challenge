@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/trustly-code-challenge/static/js/main.af0e3b19.chunk.js",
+    "main.js.map": "/trustly-code-challenge/static/js/main.af0e3b19.chunk.js.map",
+    "runtime-main.js": "/trustly-code-challenge/static/js/runtime-main.4d616b22.js",
+    "runtime-main.js.map": "/trustly-code-challenge/static/js/runtime-main.4d616b22.js.map",
+    "static/css/2.bd9a6a05.chunk.css": "/trustly-code-challenge/static/css/2.bd9a6a05.chunk.css",
+    "static/js/2.24b241f4.chunk.js": "/trustly-code-challenge/static/js/2.24b241f4.chunk.js",
+    "static/js/2.24b241f4.chunk.js.map": "/trustly-code-challenge/static/js/2.24b241f4.chunk.js.map",
+    "index.html": "/trustly-code-challenge/index.html",
+    "static/css/2.bd9a6a05.chunk.css.map": "/trustly-code-challenge/static/css/2.bd9a6a05.chunk.css.map",
+    "static/js/2.24b241f4.chunk.js.LICENSE.txt": "/trustly-code-challenge/static/js/2.24b241f4.chunk.js.LICENSE.txt",
+    "static/media/no-avatar.f9e2f701.png": "/trustly-code-challenge/static/media/no-avatar.f9e2f701.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4d616b22.js",
+    "static/css/2.bd9a6a05.chunk.css",
+    "static/js/2.24b241f4.chunk.js",
+    "static/js/main.af0e3b19.chunk.js"
+  ]
+}
