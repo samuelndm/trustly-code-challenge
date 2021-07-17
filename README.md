@@ -1,6 +1,6 @@
 ## Solution to a frontend challenge using ReactJS
 
-Live Demo: https://samuelndm.github.io/trustly-code-challenge
+Live Demo: https://samuelndm.github.io/trustly-challenge
 
 In the project directory, you can run:
 
