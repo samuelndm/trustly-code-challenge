@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 37.3rem;
@@ -44,38 +44,4 @@ export const Values = styled.div`
       margin: 0.5rem 0;
     }
   }
-`
-
-export const Price = styled.span`
-  font-family: 'Open Sans', sans-serif;
-  font-size: 2.1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.8rem;
-  letter-spacing: 0;
-  text-align: center;
-`
-
-export const Button = styled.button`
-  ${({ theme }) => css`
-    height: 4.17rem;
-    width: 27.56rem;
-    max-width: 100%;
-    border-radius: 0.45rem;
-    background-color: ${theme.colors.primary.base};
-    color: ${theme.colors.white};
-    cursor: pointer;
-
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.9rem;
-    letter-spacing: 0em;
-    text-align: center;
-
-    &:hover {
-      background-color: ${theme.colors.primary.dark};
-    }
-  `}
 `

@@ -1,6 +1,8 @@
 import React from 'react'
 import UserProvider from './UserProvider/UserProvider'
 import CartProvider from './CartProvider/CartProvider'
+import RoutesProvider from './RoutesProvider/RoutesProvider'
+import PaymentsProvider from './PaymentsProvider/PaymentsProvider'
 
 type ProvidersProps = {
   children: React.ReactNode
@@ -8,9 +10,13 @@ type ProvidersProps = {
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <UserProvider>
-      <CartProvider>{children}</CartProvider>
-    </UserProvider>
+    <RoutesProvider>
+      <UserProvider>
+        <CartProvider>
+          <PaymentsProvider>{children}</PaymentsProvider>
+        </CartProvider>
+      </UserProvider>
+    </RoutesProvider>
   )
 }
 

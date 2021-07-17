@@ -3,6 +3,7 @@ import { CartContext } from 'contexts'
 
 const useCartContext = () => {
   const cart = useContextSelector(CartContext, ({ cart }) => cart)
+
   const addItemToCart = useContextSelector(
     CartContext,
     ({ addItemToCart }) => addItemToCart

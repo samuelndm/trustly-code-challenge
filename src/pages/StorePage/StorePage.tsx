@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import React, { useEffect, useState } from 'react'
 import * as UTIL from 'utils'
 import * as API from 'services/middleware'

@@ -21,6 +21,7 @@ export const Input = styled.input`
   width: 100%;
   font-size: 2.4rem;
   border-bottom: 0.1rem solid #bdbdbd;
+  color: #787878;
 
   &::placeholder {
     font-family: 'Open Sans', sans-serif;

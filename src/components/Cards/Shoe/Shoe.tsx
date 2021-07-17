@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
-import * as Hooks from 'hooks'
 import * as UTIL from 'utils'
 import * as S from './styles'
 import Thumbnail from './Thumbnail/Thumbnail'
 import Quantity from './Quantity/Quantity'
 import Sizes from './Sizes/Sizes'
+import Price from './Price/Price'
+import AddToCartButton from './AddToCartButton/AddToCartButton'
 
 type ShoesStoreProps = {
   shoe: UTIL.Types.Shoe
 }
 
 const Shoe = ({ shoe }: ShoesStoreProps) => {
-  const { addItemToCart } = Hooks.useCartContext()
   const [purchaseDetails] = useState<UTIL.Types.ShoePurchaseDetails>({
-    size: 0,
+    id: shoe?.id,
     quantity: 0,
+    size: 0,
+    color: shoe?.color,
   })
 
   const updateSize = (newSize: number) => {
@@ -27,15 +29,6 @@ const Shoe = ({ shoe }: ShoesStoreProps) => {
       'quantity',
       newQuantity
     )
-  }
-
-  const handleClick = () => {
-    if (UTIL.Validations.Shoe.isPurchaseDetailsValid(purchaseDetails, shoe)) {
-      addItemToCart({
-        purchaseDetails,
-        product: shoe,
-      })
-    }
   }
 
   return (
@@ -52,14 +45,8 @@ const Shoe = ({ shoe }: ShoesStoreProps) => {
             <Quantity updateQuantity={updateQuantity} />
           </S.Values>
 
-          <S.Price>
-            {UTIL.Common.formatCurrency(
-              Number.parseFloat(shoe?.price),
-              UTIL.Enums.LanguageCodes[UTIL.Common.getBrowserLanguage()],
-              UTIL.Enums.CurrencyCodes[shoe?.currency]
-            )}
-          </S.Price>
-          <S.Button onClick={handleClick}>Add to cart</S.Button>
+          <Price shoe={shoe} />
+          <AddToCartButton shoe={shoe} purchaseDetails={purchaseDetails} />
         </S.Info>
       </S.Container>
     </>

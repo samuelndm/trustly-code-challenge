@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
 export const Container = styled.div`
+  z-index: 2;
   padding: 0 1.7rem;
   width: 11.53rem;
   height: 3.481rem;

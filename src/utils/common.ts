@@ -98,14 +98,26 @@ export const removeStringAccents = (string: string) => {
   return newString
 }
 
-export const formatCurrency = (
-  value: number,
-  locationCode: UTIL.Enums.LanguageCodes,
+type FormatCurrencyType = {
+  value: number
+  languageCode: UTIL.Enums.LanguageCodes
   currencyCode: UTIL.Enums.CurrencyCodes
-) => {
-  return new Intl.NumberFormat(locationCode || 'pt-BR', {
+  minimumFractionDigits?: number
+  maximumFractionDigits?: number
+}
+
+export const formatCurrency = ({
+  value,
+  languageCode,
+  currencyCode,
+  minimumFractionDigits,
+  maximumFractionDigits,
+}: FormatCurrencyType) => {
+  return new Intl.NumberFormat(languageCode || 'pt-BR', {
     style: 'currency',
     currency: currencyCode || 'BRL',
+    minimumFractionDigits: minimumFractionDigits,
+    maximumFractionDigits: maximumFractionDigits,
   }).format(value)
 }
 

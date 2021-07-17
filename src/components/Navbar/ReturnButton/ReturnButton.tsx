@@ -1,10 +1,22 @@
 import React from 'react'
-import arrowIcon from 'assets/icons/left-arrow.png'
+import { useHistory } from 'react-router-dom'
+import * as Hooks from 'hooks'
+import * as UTIL from 'utils'
 import * as S from './styles'
+import arrowIcon from 'assets/icons/left-arrow.png'
 
 const ReturnButton = () => {
+  const history = useHistory()
+  const { meta } = Hooks.useRoutesContext()
+
+  const handleClick = () => {
+    history.goBack()
+  }
+
+  if (meta?.routeTitle === UTIL.Constants.ROUTES_TITLES.SNEAKERS) return null
+
   return (
-    <S.Container>
+    <S.Container onClick={handleClick}>
       <S.ArrowIcon src={arrowIcon} alt="image of back button" />
       <S.Title>Back</S.Title>
     </S.Container>

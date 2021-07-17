@@ -18,4 +18,5 @@ export const Content = styled(componentsDefaultStyles.Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 `
