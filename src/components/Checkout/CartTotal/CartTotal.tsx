@@ -3,13 +3,14 @@ import * as UTIL from 'utils'
 import * as S from './styles'
 
 type CartTotalProps = {
+  mainTitle: string
   cart: UTIL.Types.CartItem[]
 }
 
-const CartTotal = ({ cart }: CartTotalProps) => {
+const CartTotal = ({ mainTitle, cart }: CartTotalProps) => {
   return (
     <S.Container>
-      <S.Title>Cart total</S.Title>
+      <S.Title>{mainTitle}</S.Title>
       <S.SubTitle>{cart?.[0]?.product?.description}</S.SubTitle>
       <S.Summary
         dangerouslySetInnerHTML={{

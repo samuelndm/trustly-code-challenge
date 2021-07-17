@@ -3,23 +3,23 @@ import * as Hooks from 'hooks'
 import * as C from 'components'
 import * as S from './styles'
 
-const CheckoutPage = () => {
+const ReceiptPage = () => {
   const { cart } = Hooks.useCartContext()
 
   return (
     <S.Container>
       <S.Content>
-        <C.PurchaseSteps step={2} />
+        <C.PurchaseSteps step={3} />
         <C.Checkout
           cart={cart}
-          mainTitle="Cart total"
-          hasDeliveryDetails={true}
-          hasPayments={true}
-          hasCheckoutButton={true}
+          mainTitle="Order summary"
+          hasDeliveryDetails={false}
+          hasPayments={false}
+          hasCheckoutButton={false}
         />
       </S.Content>
     </S.Container>
   )
 }
 
-export default CheckoutPage
+export default ReceiptPage

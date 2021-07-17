@@ -1,9 +1,24 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import * as CheckoutStyle from '../styles'
 
-export const Container = styled(CheckoutStyle.Block)`
-  margin: 3rem 0;
-  width: 100%;
+type ContainerProps = {
+  hasPayments: boolean
+}
+
+type ValueProps = {
+  hasPayments: boolean
+}
+
+export const Container = styled(CheckoutStyle.Block)<ContainerProps>`
+  ${({ hasPayments }) => css`
+    margin: ${hasPayments ? '3rem 0' : '0 0'};
+    width: ${hasPayments ? '100%' : 'auto'};
+  `}
+
+  @media screen and (max-width: 768px) {
+    margin: 3rem 0;
+    width: 100%;
+  }
 `
 
 export const Content = styled.div`
@@ -34,12 +49,14 @@ export const SubTitle = styled(CheckoutStyle.SubTitle)``
 
 export const Summary = styled(CheckoutStyle.Summary)``
 
-export const Value = styled.span`
-  font-family: Open Sans;
-  font-size: 3.351rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 4.351rem;
-  letter-spacing: 0;
-  text-align: left;
+export const Value = styled.span<ValueProps>`
+  ${({ hasPayments }) => css`
+    font-family: Open Sans;
+    font-size: ${hasPayments ? '3.351rem' : '2.351rem'};
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.351rem;
+    letter-spacing: 0;
+    text-align: left;
+  `}
 `

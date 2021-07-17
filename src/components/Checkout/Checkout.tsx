@@ -6,26 +6,40 @@ import CartTotal from './CartTotal/CartTotal'
 import DeliveryDetails from './DeliveryDetails/DeliveryDetails'
 import TotalCost from './TotalCost/TotalCost'
 import Payments from './Payments/Payments'
+import PaymentMethod from './PaymentMethod/PaymentMethod'
 import CompleteCheckoutButton from './CompleteCheckoutButton/CompleteCheckoutButton'
+import PlaceOrderButton from './PlaceOrderButton/PlaceOrderButton'
 
 type CheckoutProps = {
   cart: UTIL.Types.CartItem[]
+  mainTitle: string
+  hasDeliveryDetails: boolean
+  hasPayments: boolean
+  hasCheckoutButton: boolean
 }
 
-const Checkout = ({ cart }: CheckoutProps) => {
+const Checkout = ({
+  cart,
+  mainTitle,
+  hasDeliveryDetails,
+  hasPayments,
+  hasCheckoutButton,
+}: CheckoutProps) => {
   return (
     <S.Container>
       <S.ImageContainer
         imageURL={cart?.[0]?.product?.maxresURL || placeholder}
       />
       <S.Info>
-        <CartTotal cart={cart} />
-        <DeliveryDetails />
-        <TotalCost cart={cart} />
+        <CartTotal mainTitle={mainTitle} cart={cart} />
 
-        <Payments />
+        {hasDeliveryDetails ? <DeliveryDetails /> : <PaymentMethod />}
 
-        <CompleteCheckoutButton />
+        <TotalCost cart={cart} hasPayments={hasPayments} />
+
+        {hasPayments && <Payments />}
+
+        {hasCheckoutButton ? <CompleteCheckoutButton /> : <PlaceOrderButton />}
       </S.Info>
     </S.Container>
   )

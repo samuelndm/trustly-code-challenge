@@ -36,6 +36,15 @@ const Routes = () => {
         />
         <Route
           exact
+          path="/receipt"
+          component={P.ReceiptPage}
+          meta={{
+            previousRoute: '/store',
+            routeTitle: UTIL.Constants.ROUTES_TITLES.CHECKOUT,
+          }}
+        />
+        <Route
+          exact
           path="*"
           component={P.NotFoundPage}
           meta={{
