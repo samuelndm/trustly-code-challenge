@@ -6,7 +6,7 @@ import CartTotal from './CartTotal/CartTotal'
 import DeliveryDetails from './DeliveryDetails/DeliveryDetails'
 import TotalCost from './TotalCost/TotalCost'
 import Payments from './Payments/Payments'
-import ContinueButton from './ContinueButton/ContinueButton'
+import CompleteCheckoutButton from './CompleteCheckoutButton/CompleteCheckoutButton'
 
 type CheckoutProps = {
   cart: UTIL.Types.CartItem[]
@@ -25,7 +25,7 @@ const Checkout = ({ cart }: CheckoutProps) => {
 
         <Payments />
 
-        <ContinueButton />
+        <CompleteCheckoutButton />
       </S.Info>
     </S.Container>
   )

@@ -10,7 +10,11 @@ const ReturnButton = () => {
   const { meta } = Hooks.useRoutesContext()
 
   const handleClick = () => {
-    history.goBack()
+    if (meta?.previousRoute) {
+      history.push(meta.previousRoute)
+    } else {
+      history.goBack()
+    }
   }
 
   if (meta?.routeTitle === UTIL.Constants.ROUTES_TITLES.SNEAKERS) return null

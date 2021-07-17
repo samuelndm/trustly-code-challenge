@@ -5,3 +5,8 @@ export const ROUTES_TITLES = {
   CHECKOUT: 'Checkout',
   NOT_FOUND: 'Not found',
 }
+
+export const PAYMENT_STATUS = {
+  SUCCEED: 'succeed',
+  FAILED: 'failed',
+}

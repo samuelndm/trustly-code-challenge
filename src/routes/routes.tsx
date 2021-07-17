@@ -19,7 +19,7 @@ const Routes = () => {
       <Switch>
         <Route
           exact
-          path="/"
+          path={['/', '/store']}
           component={P.StorePage}
           meta={{
             routeTitle: UTIL.Constants.ROUTES_TITLES.SNEAKERS,
@@ -30,6 +30,7 @@ const Routes = () => {
           path="/checkout"
           component={P.CheckoutPage}
           meta={{
+            previousRoute: '/store',
             routeTitle: UTIL.Constants.ROUTES_TITLES.CHECKOUT,
           }}
         />

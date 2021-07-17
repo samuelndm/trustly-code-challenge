@@ -1,6 +1,6 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useCallback } from 'react'
 
-// eslint-disable-next-line
 const useLocalStorage = (key: string, defaultValue: any = null) => {
   const storageValue = localStorage.getItem(key)
   const initialValue = storageValue ? JSON.parse(storageValue) : null
@@ -26,7 +26,11 @@ const useLocalStorage = (key: string, defaultValue: any = null) => {
     }
   }, [key, defaultValue])
 
-  return [value, (value: any) => updatingValue(value), () => removingValue()] // eslint-disable-line
+  return [
+    value,
+    (value: any) => updatingValue(value),
+    () => removingValue(),
+  ] as const
 }
 
 export default useLocalStorage
