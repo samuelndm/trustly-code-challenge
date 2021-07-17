@@ -1,6 +1,6 @@
 ## Solution to a frontend challenge using ReactJS
 
-Live Demo: https://epic-villani-194ca1.netlify.app/#/
+Live Demo: https://epic-villani-194ca1.netlify.app
 
 In the project directory, you can run:
 
